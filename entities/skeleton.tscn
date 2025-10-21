@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1gnf7tfdk2pr"]
+
+[ext_resource type="Texture2D" uid="uid://dn5oq004sufdr" path="res://sprites/3 - Skeleton/Standing (32 x 32).png" id="1_20vpb"]
+[ext_resource type="Script" uid="uid://lpu61dedy8q7" path="res://scripts/skeleton.gd" id="1_yag7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yag7t"]
+atlas = ExtResource("1_20vpb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpmxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yag7t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4oc3b"]
+radius = 7.0
+height = 26.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_yag7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fpmxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("CapsuleShape2D_4oc3b")
