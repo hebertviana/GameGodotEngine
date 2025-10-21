@@ -31,4 +31,6 @@ stateDiagram-v2
     Idle --> Duck
     Idle --> Slide
 
+	[*] --> Dead
+
 ```
