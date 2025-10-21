@@ -34,3 +34,14 @@ stateDiagram-v2
 	[*] --> Dead
 
 ```
+## Diagrama Máquina de Estado do Skeleton
+```mermaid
+---
+title: Máquina de Estados do Skeleton
+---
+%%{init: {"theme": "hand-drawn"}}%%
+stateDiagram-v2
+    [*] --> Walk
+	[*] --> Dead
+
+```
