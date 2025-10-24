@@ -7,29 +7,29 @@ title: Máquina de Estados do Player
 ---
 %%{init: {"theme": "hand-drawn"}}%%
 stateDiagram-v2
-    Idle --> Duck
-    Idle --> Walk
-    Idle --> Jump
+	Idle --> Duck
+	Idle --> Walk
+	Idle --> Jump
 
-    Duck --> Idle
+	Duck --> Idle
 
-    Slide --> Walk
-    Slide --> Duck
+	Slide --> Walk
+	Slide --> Duck
 
-    Walk --> Idle
-    Walk --> Fall
-    Walk --> Jump
-    Walk --> Slide
-    
-    Jump --> Jump
-    Jump --> Fall
-    
-    Fall --> Idle
-    Fall --> Jump
-    Fall --> Walk
+	Walk --> Idle
+	Walk --> Fall
+	Walk --> Jump
+	Walk --> Slide
+	
+	Jump --> Jump
+	Jump --> Fall
+	
+	Fall --> Idle
+	Fall --> Jump
+	Fall --> Walk
 
-    Idle --> Duck
-    Idle --> Slide
+	Idle --> Duck
+	Idle --> Slide
 
 	[*] --> Dead
 
@@ -41,7 +41,9 @@ title: Máquina de Estados do Skeleton
 ---
 %%{init: {"theme": "hand-drawn"}}%%
 stateDiagram-v2
-    [*] --> Walk
+	[*] --> Walk
+	Walk --> Attack
+	Attack --> Walk
 	[*] --> Dead
 
 ```

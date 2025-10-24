@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bgri2ifxye1hh"]
+[gd_scene load_steps=15 format=4 uid="uid://bgri2ifxye1hh"]
 
 [ext_resource type="PackedScene" uid="uid://doc61wlw1ucb7" path="res://entities/player.tscn" id="1_bmxgx"]
 [ext_resource type="TileSet" uid="uid://c528tf2ts1h42" path="res://tiles/terrain.tres" id="2_ry6l7"]
@@ -29,9 +29,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8vtq"]
 size = Vector2(20, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei81g"]
+size = Vector2(20, 204)
+
 [node name="Tropic" type="Node2D"]
-metadata/_edit_vertical_guides_ = [459.0]
-metadata/_edit_horizontal_guides_ = [113.0]
 
 [node name="TileMaps" type="Node" parent="."]
 
@@ -100,10 +101,11 @@ frame_progress = 0.86034614
 centered = false
 
 [node name="Camera" parent="." instance=ExtResource("9_34ia6")]
+position = Vector2(16, 164)
 limit_right = 460
 
 [node name="Player" parent="." instance=ExtResource("1_bmxgx")]
-position = Vector2(15, 164)
+position = Vector2(17, 168)
 
 [node name="LevelEnd" parent="." instance=ExtResource("10_d18o5")]
 position = Vector2(469, -186)
@@ -113,7 +115,23 @@ next_level = "forest"
 position = Vector2(0, -31.5)
 shape = SubResource("RectangleShape2D_t8vtq")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("11_t8vtq")]
-position = Vector2(64, 152)
+[node name="Skeleton" parent="." instance=ExtResource("11_t8vtq")]
+position = Vector2(66, 96)
+
+[node name="Skeleton2" parent="." instance=ExtResource("11_t8vtq")]
+position = Vector2(151, 48)
+
+[node name="Skeleton3" parent="." instance=ExtResource("11_t8vtq")]
+position = Vector2(71, -113)
+
+[node name="Skeleton4" parent="." instance=ExtResource("11_t8vtq")]
+position = Vector2(139, 160)
+
+[node name="Limit" type="StaticBody2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limit"]
+position = Vector2(-11, 93)
+shape = SubResource("RectangleShape2D_ei81g")
 
 [editable path="LevelEnd"]
